@@ -57,8 +57,4 @@ Set `VITE_API_URL` (see `.env.example`) when the backend is not on localhost:808
 - `backend/tests/`: pytest
 - `frontend/src/`: React, TypeScript, Tailwind, Recharts
 
-## Limitations
-Wind only, national level. No demand or price data, so forecast error is not a financial loss. Missing intervals are counted, never filled.
 
-## AI disclosure
-Built with AI assistance (Claude) for planning, implementation and documentation. Logic is covered by tests I ran; the frontend has not yet been reviewed in a browser.
