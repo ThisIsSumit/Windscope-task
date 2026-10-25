@@ -130,7 +130,7 @@ export function FinalCta() {
 
 export function SiteFooter() {
   return <footer className="bg-black pb-16"><div className="mx-auto max-w-6xl px-6"><div className="border-t border-[#272727] pt-8 flex flex-wrap items-start justify-between gap-6">
-    <div className="max-w-[680px] text-sm text-white/50"><p>Data: Elexon BMRS, FUELHH and WINDFOR datasets. Times shown in Europe/London.</p></div>
+    <div className="flex flex-col gap-2"><Wind size={20} weight="bold" className="text-emerald-400" /><p className="text-sm text-white/60">WindScope</p></div>
     <a href="#top" className={`inline-flex items-center gap-2 rounded-full border border-[#313131] px-3 py-2 text-sm font-semibold hover:bg-[#181818] active:scale-[0.98] ${EASE} focus-visible:ring-2 ring-white`}>Back to top<ArrowUp size={16} weight="bold" /></a></div></div></footer>;
 }
 
