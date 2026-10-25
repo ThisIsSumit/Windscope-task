@@ -5,7 +5,9 @@ Replays the wind forecast Elexon had published at a chosen day ahead decision cu
 ## Status
 - Backend logic (cutoff selection, metrics) is covered by 7 pytest tests, which pass.
 - **Not yet verified against live Elexon data.** If WINDFOR returns only one forecast version per interval, the app shows a limitation banner and does not claim decision time accuracy.
-- Deployed URLs: not deployed yet.
+- Deployed URLs: [WindScope](https://frontend-six-red-20.vercel.app/) || [Backend API](https://windscope-api-isb4.onrender.com)
+
+
 
 ## Data
 | Source | Endpoint | Fields used |
