@@ -20,13 +20,16 @@ export default function Replay() {
     if (!revs.length || !root.current || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     scrollTrigger.current = ScrollTrigger.create({
       trigger: root.current,
-      start: "top top",
-      end: "+=120%",
-      pin: true,
+      start: "top 80%",
+      end: "bottom 20%",
       scrub: true,
       onUpdate: trigger => setPct(Math.round(trigger.progress * 100)),
     });
-    return () => { scrollTrigger.current?.kill(); scrollTrigger.current = null; };
+    return () => {
+      scrollTrigger.current?.kill(false);
+      scrollTrigger.current = null;
+      ScrollTrigger.refresh();
+    };
   }, [revs.length, day, t]);
   useEffect(() => {
     const refresh = () => ScrollTrigger.refresh();
@@ -41,7 +44,9 @@ export default function Replay() {
   const setCutoff = (value: number) => {
     setPct(value);
     const trigger = scrollTrigger.current;
-    if (trigger) trigger.scroll(trigger.start + (value / 100) * (trigger.end - trigger.start));
+    if (trigger) {
+      window.scrollTo({ top: trigger.start + (value / 100) * (trigger.end - trigger.start), behavior: "smooth" });
+    }
   };
   return <section ref={root} className="min-h-screen">
     <p className="max-w-[680px] text-base text-white/70">Each bar is a forecast Elexon published for one half hour of delivery, placed at the time it appeared. Only bars left of the cutoff line could have informed the decision. The overview uses {String(hour).padStart(2, "0")}:00 on the day before.</p>
