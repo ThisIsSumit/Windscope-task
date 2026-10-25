@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+html{scroll-behavior:smooth;scroll-padding-top:96px;background:#000}
+body{margin:0;background:#000;color:#fff;font-family:"Geist Variable",system-ui,sans-serif;font-style:normal}
+h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
+.skeleton{background:#272727;animation:pulse 1.6s cubic-bezier(0.32,0.72,0,1) infinite}
+@keyframes pulse{50%{opacity:.5}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.blades{transform-origin:0 0;animation:spin 14s linear infinite}
+@media (prefers-reduced-motion:reduce){.blades,.skeleton{animation:none}html{scroll-behavior:auto}}
